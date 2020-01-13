@@ -53,7 +53,7 @@ checkResult
 
 
 
-test "3 - 1011 => PORTC: 0x01"
+test "3 - 1011 => PORTC: 0x03"
 setPINA 0x0B
 continue 5
 expectPORTC 0x01
@@ -72,10 +72,10 @@ continue 5
 expectPORTC 0x04
 checkResult
 
-test "4 - 1111 => PORTC: 0x80"
+test "4 - 1111 => PORTC: 0x00"
 setPINA 0x0F
 continue 5
-expectPORTC 0x80
+expectPORTC 0x00
 checkResult
 
 

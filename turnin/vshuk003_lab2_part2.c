@@ -29,11 +29,8 @@ int main(void) {
       		thirdSpot = PINA & 0x04;
       		fourthSpot = PINA & 0x08;
       		// shift all the bits so we can just add them up
-      		secondSpot = secondSpot >> 1;
-      		thirdSpot = thirdSpot >> 2;
-      		fourthSpot = fourthSpot >> 3;
      		// add up all the spots 
-      		cntavail = firstSpot + secondSpot + thirdSpot + fourthSpot;	
+      		cntavail = firstSpot + (secondSpot >> 1) + (thirdSpot >> 2) + (fourthSpot >> 3);	
       		PORTC = 0x04 - cntavail;
     	}
 	return 0;

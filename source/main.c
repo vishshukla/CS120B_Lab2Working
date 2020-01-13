@@ -17,7 +17,7 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00;
 	
-	unsigned char cntfull = 0x00;
+	unsigned char cntavail = 0x00;
 	unsigned char firstSpot = 0x00;
 	unsigned char secondSpot = 0x00;
 	unsigned char thirdSpot = 0x00;
@@ -30,12 +30,8 @@ int main(void) {
       		fourthSpot = PINA & 0x08;
       		// shift all the bits so we can just add them up
      		// add up all the spots 
-      		cntfull = firstSpot + (secondSpot >> 1) + (thirdSpot >> 2) + (fourthSpot >> 3);	
-		if(cntfull == 0x04) {
-			PORTC = 0x80;
-		} else {
-      			PORTC = 0x04 - cntfull;
-		}
+      		cntavail = firstSpot + (secondSpot >> 1) + (thirdSpot >> 2) + (fourthSpot >> 3);	
+      		PORTC = 0x04 - cntavail;
     	}
 	return 0;
 }
