@@ -26,59 +26,43 @@
 echo ======================================================\n
 echo Running all tests..."\n\n
 
+# Example test:
+test "PINA: 0x00, PINB: 0x00 => PORTC: 0"
+# Set inputs
+setPINA 0x00
+setPINB 0x00
+# Continue for several ticks
+continue 2
+# Set expect values
+expectPORTC 0
+# Check pass/fail
+checkResult
+
 # Add tests below
-test "1 - 0001 => PORTC: 0x03"
-setPINA 0x01
-continue 5
-expectPORTC 0x03
-checkResult
-
-test "2 - 0011 => PORTC: 0x02"
-setPINA 0x03
-continue 5
-expectPORTC 0x02
-checkResult
-
-test "2 - 0101 => PORTC: 0x02"
-setPINA 0x05
-continue 5
-expectPORTC 0x02
-checkResult
-
-test "2 - 1001 => PORTC: 0x02"
-setPINA 0x09
-continue 5
-expectPORTC 0x02
-checkResult
-
-
-
-test "3 - 1011 => PORTC: 0x03"
-setPINA 0x0B
-continue 5
-expectPORTC 0x01
-checkResult
-
-
-test "4 - 1101 => PORTC: 0x01"
-setPINA 0x0D
-continue 5
-expectPORTC 0x01
-checkResult
-
-test "0 - 0000 => PORTC: 0x04"
+test "0 & 0 => PORTB: 0x00"
 setPINA 0x00
 continue 5
-expectPORTC 0x04
+expectPORTB 0x00
 checkResult
 
-test "4 - 1111 => PORTC: 0x00"
-setPINA 0x0F
+test "1 & 0 => PORTB: 0x01"
+setPINA 0x01
 continue 5
-expectPORTC 0x00
+expectPORTB 0x01
+checkResult
+
+test "0 & 1 => PORTB: 0x00"
+setPINA 0x02
+continue 5
+expectPORTB 0x00
 checkResult
 
 
+test "1 & 1 => PORTB: 0x00"
+setPINA 0x03
+continue 5
+expectPORTB 0x00
+checkResult
 
 
 # Report on how many tests passed/tests ran
