@@ -3,5 +3,8 @@ Note: automatically using hardware breakpoints for read-only addresses.
 ======================================================
 Running all tests..."
 
-"1 - 0001 => PORTC: 0x03"..."2 - 0011 => PORTC: 0x02"..."2 - 0101 => PORTC: 0x02"..."2 - 1001 => PORTC: 0x02"..."3 - 1011 => PORTC: 0x03"..."4 - 1101 => PORTC: 0x01"..."0 - 0000 => PORTC: 0x04"..."4 - 1111 => PORTC: 0x00"...======================================================
+"1 - 0001 => PORTC: 0x03"..."2 - 0011 => PORTC: 0x02"..."2 - 0101 => PORTC: 0x02"..."2 - 1001 => PORTC: 0x02"..."3 - 1011 => PORTC: 0x01"..."4 - 1101 => PORTC: 0x01"..."0 - 0000 => PORTC: 0x04"..."4 - 1111 => PORTC: 0x80"...
+	Expected 0x80 
+	PORTC '0x800028:	0x80
+======================================================
 Quitting: Remote doesn't know how to detach
